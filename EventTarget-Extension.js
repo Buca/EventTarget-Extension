@@ -152,6 +152,30 @@ Object.assign( EventTarget.prototype, {
 
         }
 
+    },
+    
+    hasEventListener: function( type, listener, options ) {
+
+        if( this.eventListeners !== undefined &&
+            this.eventListeners[ type ] !== undefined ) {
+
+            for( var i = 0; i < this.eventListeners[ type ].length; i ++ ) {
+
+                if( this.eventListeners[ type ][ i ].listener === listener &&
+                    this.eventListeners[ type ][ i ].options === options ) {
+
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
+        }
+
+        return false;
+
     }
 
 } );
