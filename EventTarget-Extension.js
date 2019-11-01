@@ -176,6 +176,30 @@ Object.assign( EventTarget.prototype, {
 
         return false;
 
+    },
+    
+    copyEventListeners: function( target ) {
+
+        if( target.eventListeners !== undefined ) {
+
+            for( var type in target.eventListeners ) {
+
+                for( var i = 0; i < target.eventListeners[ type ].length; i ++ ) {
+
+                    this.addEventListener(
+
+                        type,
+                        target.eventListeners[ type ][ i ].listener,
+                        target.eventListeners[ type ][ i ].options
+
+                    );
+
+                }
+
+            }
+
+        }
+
     }
 
 } );
