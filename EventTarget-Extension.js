@@ -11,7 +11,12 @@ Object.assign( EventTarget.prototype, {
 
     addEventListener: function( type, listener, options ) {
 
-        this._addEventListener( type, listener, options );
+        if( this.eventListenersEnabled === undefined ||
+            this.eventListenersEnabled === true ) {
+
+            this._addEventListener( type, listener, options );
+
+        }
 
         if( this.eventListeners === undefined ) {
 
