@@ -16,7 +16,7 @@ Like `.addEventListener`, this works the same as the native implementation of `.
 This method will remove any and all event listeners of the node.
 
 #### `EventTarget.disableEventListeners()`
-If the event listeners are enabled, this will disable ( and not remove ) all events on the node. So if you trigger any event on the node nothing should happen.
+If the event listeners are enabled, this will disable, and not remove, all events on the node. So if you trigger any event on the node nothing should happen.
 
 #### `EventTarget.enableEventListeners()`
 If the event listeners are disabled on the node this will re-enable all events on the node.
